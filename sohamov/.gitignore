@@ -12,6 +12,7 @@ api
 dist
 dist-ssr
 *.local
+.DS_Store
 
 # Editor directories and files
 .vscode/*
