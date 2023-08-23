@@ -2,11 +2,11 @@ import { ref, getDownloadURL } from "firebase/storage";
 import { useState, useEffect } from 'react'
 import * as tf from "@tensorflow/tfjs";
 
-import DISH_CLASSSES from "./assets/dishClasses";
-import firebaseStorage from "./api/firebaseconfig.js"
-import ImageUploader from "./components/ImageUploader";
+import DISH_CLASSSES from "./assets/dishClasses"; // dictionary with model classes
+import firebaseStorage from "./api/firebaseconfig.js" // object for firebase storage reads
+import ImageUploader from "./components/ImageUploader"; // image uploading component
 
-import './App.css'
+import './App.css' // stylesheet
 
 // run model for uplaoded image and set predicition
 async function runModel(model, setPrediction) {
