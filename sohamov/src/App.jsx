@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import * as tf from "@tensorflow/tfjs";
-import firebaseStorage from "./api/firebaseconfig.js"
 import { ref, getDownloadURL } from "firebase/storage";
-import ImageUploader from "./components/ImageUploader";
-import DISH_CLASSSES from "./assets/dishClasses";
+import { useState, useEffect } from 'react'
+import * as tf from "@tensorflow/tfjs";
 
+import DISH_CLASSSES from "./assets/dishClasses";
+import firebaseStorage from "./api/firebaseconfig.js"
+import ImageUploader from "./components/ImageUploader";
+
+import './App.css'
+
+// run model for uplaoded image and set predicition
 async function runModel(model, setPrediction) {
   const imageElement = document.getElementById("selectedImage");
   let tensor = tf.browser.fromPixels(imageElement)
