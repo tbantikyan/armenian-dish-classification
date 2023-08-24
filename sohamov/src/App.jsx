@@ -5,8 +5,10 @@ import * as tf from "@tensorflow/tfjs";
 import DISH_CLASSSES from "./assets/dishClasses"; // dictionary with model classes
 import firebaseStorage from "./api/firebaseconfig.js" // object for firebase storage reads
 import ImageUploader from "./components/ImageUploader"; // image uploading component
+import NavBar from "./components/NavBar";
 
 import './App.css' // stylesheet
+import PredictionDisplay from "./components/PredictionDisplay";
 
 // run model for uplaoded image and set predicition
 async function runModel(model, setPrediction) {
@@ -27,10 +29,9 @@ async function runModel(model, setPrediction) {
       }).sort((a, b)=>{
         return b.probability - a.probability;
       }).slice(0, 3);
-    console.log(top3);
     setPrediction(top3);
   })
-}
+};
 
 function App() {
   const [model, setModel] = useState();
@@ -38,27 +39,29 @@ function App() {
   const [prediction, setPrediction] = useState(null);
 
 
-  const fetchModel = async () => {
-    if (model) { // prevent repeated calls
-      return;
-    };
-
-    const modelRef = ref(firebaseStorage, 'model.json');
-    const modelUrl = await getDownloadURL(modelRef);
-    const loadedModel = await tf.loadLayersModel(modelUrl);
-    setModel(loadedModel);
-    console.log("loaded");
-  };
-
   // load trained model
-  useEffect(() => fetchModel);
+  useEffect(() => {
+    const fetchModel = async () => {
+      if (model) { // prevent repeated calls
+        return;
+      };
+
+      const modelRef = ref(firebaseStorage, 'model.json');
+      const modelUrl = await getDownloadURL(modelRef);
+      const loadedModel = await tf.loadLayersModel(modelUrl);
+      setModel(loadedModel);
+    };
+    fetchModel();
+  }, [model]);
 
   return (
     <>
+      <header>
+        <NavBar />
+      </header>
       {
       model 
         ? <div>
-            <h1>test</h1>
             <ImageUploader selectedImage={selectedImage} setSelectedImage={setSelectedImage} setPrediction={setPrediction} />
             <br />
             {
@@ -66,7 +69,8 @@ function App() {
               ? <button onClick={() => runModel(model, setPrediction)}>Predict</button>
               : null
             }
-            </div>
+            <PredictionDisplay prediction={prediction} selectedImage={selectedImage} />
+          </div>
         : <p>Loading model...</p>
       }
     </>

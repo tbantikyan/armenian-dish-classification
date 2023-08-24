@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+header {
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
