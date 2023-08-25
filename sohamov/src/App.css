@@ -1,18 +1,35 @@
-#root {
-  max-width: 1280px;
+#loading {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+
+#model-logic {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+/* main {
+  width: 100%;
+  vertical-align: middle;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20rem;
   text-align: center;
 }
 
 header {
-  top: 0;
-  min-height: 75px;
-  padding: 0px 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0; 
+  width: 100%;
 }
 
 .logo {
@@ -21,9 +38,11 @@ header {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -32,6 +51,7 @@ header {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -49,4 +69,4 @@ header {
 
 .read-the-docs {
   color: #888;
-}
+} */

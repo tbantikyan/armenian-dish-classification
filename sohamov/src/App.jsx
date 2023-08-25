@@ -5,10 +5,12 @@ import * as tf from "@tensorflow/tfjs";
 import DISH_CLASSSES from "./assets/dishClasses"; // dictionary with model classes
 import firebaseStorage from "./api/firebaseconfig.js" // object for firebase storage reads
 import ImageUploader from "./components/ImageUploader"; // image uploading component
-import NavBar from "./components/NavBar";
+import logo from "./assets/sohamov-logo.png" // site logo
+import NavBar from "./components/NavBar"; // navigation bar component
+import PredictionDisplay from "./components/PredictionDisplay"; // prediction display component
+
 
 import './App.css' // stylesheet
-import PredictionDisplay from "./components/PredictionDisplay";
 
 // run model for uplaoded image and set predicition
 async function runModel(model, setPrediction) {
@@ -19,14 +21,14 @@ async function runModel(model, setPrediction) {
     .div(tf.scalar(127.5))
     .sub(tf.scalar(1))
     .expandDims();
-  model.predict(tensor).data().then(predictions =>{
+  model.predict(tensor).data().then(predictions => {
     let top3 = Array.from(predictions)
-      .map((p, i)=>{
+      .map((p, i) => {
         return {
           probability: p,
           className: DISH_CLASSSES[i]
         }
-      }).sort((a, b)=>{
+      }).sort((a, b) => {
         return b.probability - a.probability;
       }).slice(0, 3);
     setPrediction(top3);
@@ -54,16 +56,22 @@ function App() {
     fetchModel();
   }, [model]);
 
-  return (
-    <>
-      <header>
-        <NavBar />
-      </header>
-      {
-      model 
-        ? <div>
+  if (!model) {
+    return (
+      <div id="loading">
+        <img src={logo} width={200} />
+        <p>Loading model...</p>
+      </div>
+    )
+  } else {
+    return (
+      <>
+        <header>
+          <NavBar />
+        </header>
+        <main>
+          <div id="model-logic">
             <ImageUploader selectedImage={selectedImage} setSelectedImage={setSelectedImage} setPrediction={setPrediction} />
-            <br />
             {
             selectedImage && !prediction
               ? <button onClick={() => runModel(model, setPrediction)}>Predict</button>
@@ -71,10 +79,13 @@ function App() {
             }
             <PredictionDisplay prediction={prediction} selectedImage={selectedImage} />
           </div>
-        : <p>Loading model...</p>
-      }
-    </>
-  );
+          <div id="How_it_works">
+            <h3>How it works</h3>
+          </div>
+        </main>
+      </>
+    );
+  }
 };
 
 export default App;

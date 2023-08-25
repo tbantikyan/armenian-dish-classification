@@ -1,0 +1,31 @@
+#navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--site-bg-color);
+    margin: 0 5vw;
+}
+
+#logo-container {
+    height: 100%;
+    width: 65vw;
+    display: flex;
+    align-items: center;
+}
+#logo {
+    height: 45%;
+    position: relative;
+    margin: 0 6.9vw;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    width: 35vw;
+    justify-content: space-around;
+    margin: 0 5vw 0 25vw;
+}
+li {
+    list-style: none;
+}
