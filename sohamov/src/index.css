@@ -15,16 +15,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  overflow-x: hidden;
 }
 
-header {
-  overflow: hidden;
-  position: fixed; 
-  top: 0; 
-  height: 56px;
-  width: 100%;
-  border-bottom: 2px solid #dcdcdc;
-}
 
 a, a:visited {
   font-weight: 340;
@@ -38,13 +32,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  /* place-items: center; */
   min-width: 100vw;
   min-height: 100vh;
-}
-
-main {
-  padding-top: 56px;
 }
 
 h1 {

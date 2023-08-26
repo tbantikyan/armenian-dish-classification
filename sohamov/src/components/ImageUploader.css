@@ -1,0 +1,9 @@
+#uploader-container {
+    margin-top: 5vh;
+    width: 10vw
+}
+
+#image-container {
+    aspect-ratio: 1 / 1;
+    border: 2px solid black;
+}

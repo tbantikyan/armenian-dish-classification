@@ -1,18 +1,32 @@
-import logo from "../assets/sohamov-logo.png"
+import { useState } from 'react'
 
-import './NavBar.css' // stylesheet
+import logo from "../assets/sohamov-logo.png" // site logo
+import faBars from "../assets/fa-bars.png" // menu icon
+import xmark from "../assets/xmark.png" // menu icon
+
+import "./NavBar.css" // stylesheet
+
 
 function NavBar() {
-    //console.log("rendered this")
+    const [showMenu, setShowMenu] = useState(false);
+
+    function toggleMenu(){
+        setShowMenu(!showMenu);
+    };
+
     return (
         <div id="navbar">
             <div id="logo-container">
                 <img id="logo" src={logo}/>
             </div>
-            <ul>
-                <li><a href="#How_it_works">How It Works</a></li>
-                <li><a href="https://github.com/tigranb2/armenian-dish-classification" target="_blank">Source Code</a></li>
-            </ul>
+            <div id="toggle-container">
+                <a onClick={toggleMenu}><img id="toggle-icon" src={!showMenu ? faBars : xmark} /></a>
+            </div>
+            <ul onClick={() => setShowMenu(false)} className={showMenu ? "visible" : "hidden"}>
+                <li><a className="nav-link" href="#How_it_works">How It Works</a></li>          
+                <li><a className="nav-link" href="https://github.com/tigranb2/armenian-dish-classification" target="_blank">Source Code</a></li>
+            </ul> 
+   
         </div>
     );
 };

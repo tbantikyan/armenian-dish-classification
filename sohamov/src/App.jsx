@@ -14,7 +14,7 @@ import './App.css' // stylesheet
 
 // run model for uplaoded image and set predicition
 async function runModel(model, setPrediction) {
-  const imageElement = document.getElementById("selectedImage");
+  const imageElement = document.getElementById("selected-image");
   let tensor = tf.browser.fromPixels(imageElement)
     .resizeNearestNeighbor([224, 224])
     .toFloat()
@@ -60,7 +60,10 @@ function App() {
     return (
       <div id="loading">
         <img src={logo} width={200} />
-        <p>Loading model...</p>
+        <div id="loading-text">
+          <p>Loading model</p>
+          <div id="ellipsis"></div>
+        </div>
       </div>
     )
   } else {
