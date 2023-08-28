@@ -1,13 +1,13 @@
 const DISH_CLASSSES = {
-    0: 'basturma',
-    1: 'gata',
-    2: 'ghapama',
-    3: 'harissa',
-    4: 'kofta',
-    5: 'lahmajo',
-    6: 'manti',
-    7: 'spas',
-    8: 'tolma'
+    0: 'Բաստուրմա (basturma)',
+    1: 'Գաթա (gata)',
+    2: 'Ղափամա (ghapama)',
+    3: 'Հարիսա (harissa)',
+    4: 'Քուֆթա (kufta)',
+    5: 'Լահմաջո (lahmajo)',
+    6: 'Մանթի (manti)',
+    7: 'Սպաս (spas)',
+    8: 'Տոլմա (tolma)'
 }
 
 export default DISH_CLASSSES

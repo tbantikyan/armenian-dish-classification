@@ -2,8 +2,8 @@
   /* Variables */
   --site-bg-color: #FAFAFA;
   --container-color: #fffefb;
-  --site-accent-color: #E96F03;
-  --text-color-light: #213547;
+  --site-accent-color-1: #E96F03;
+  --site-accent-color-2: #213547;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -29,7 +29,7 @@ a, a:visited {
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--site-accent-color);
+  color: var(--site-accent-color-1);
 }
 
 body {
@@ -39,10 +39,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
 button {
   border-radius: 8px;
@@ -65,7 +61,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: var(--text-color-light);
+    color: var(--site-accent-color-2);
     background-color: #ffffff;
   }
   a:hover {

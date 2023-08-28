@@ -33,6 +33,7 @@ function ImageUploader({ selectedImage, setSelectedImage, prediction, setPredict
                     type="file"
                     name="myImage"
                     id="image-upload"
+                    accept="image/*"
                     onChange={(event) => {
                         setSelectedImage(URL.createObjectURL(event.target.files[0]));
                         setPrediction(null);

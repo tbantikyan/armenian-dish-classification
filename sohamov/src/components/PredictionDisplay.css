@@ -1,7 +1,53 @@
 #prediction-container {
     width: 38%;
     box-sizing: border-box;
-    border: 5px solid var(--site-accent-color);
+    border: 5px solid var(--site-accent-color-2);
     border-radius: 1%;
     background-color: var(--container-color);
+    padding: 0 1%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.4em;
+    margin-top: -0.3em;
+    margin-bottom: 0.1em;
+}
+h3 {
+    margin-bottom: 0.2em;
+}
+#uncertain-indicator {
+    font-size: 0.95em;
+}
+
+.dish-li-item:first-of-type {
+    margin-top: -0.2em;
+}
+.dish-li-item:before {
+    content: "-";
+    margin: 0 0.1em;
+    font-weight: 500;
+    color: var(--site-accent-color-1);
+}
+.dish {
+    color: var(--site-accent-color-1);
+    text-decoration: underline;
+}
+.dish:hover {
+    cursor: pointer;
+}
+.divider {
+    border-bottom: 1px solid var(--site-accent-color-2);
+    margin: 2px 0;
+}
+.thick {
+    height: 3px;
+    background-color: var(--site-accent-color-2);
 }

@@ -2,9 +2,19 @@ import { useState, useEffect } from 'react'
 
 import "./PredictionDisplay.css" // style sheet
 
+// use dish name as an identifier to determine which description to show
+const DISH_DESCRIPTIONS = {
+    'Բաստուրմա (basturma)': "Basturma is ...."
+}
+
 
 function PredictionDisplay({prediction, selectedImage}) {
     const [results, setResults] = useState();
+    const [dishInfo, setDishInfo] = useState();
+
+    function determineInfo(dish) {
+        setDishInfo(DISH_DESCRIPTIONS[dish]);
+    };
 
     useEffect(() => {
         const parsePrediction = () => {
@@ -14,23 +24,29 @@ function PredictionDisplay({prediction, selectedImage}) {
                 } else {
                     setResults(null);
                 }
-
+                setDishInfo(null);
                 return;
             };
 
             let parsed;
-            if (prediction[0].probability < 0.5) { 
+            if (prediction[0].probability < 0.5 || prediction[2].probability > 0.03) { 
                 // uncertain prediction
-                parsed = <h2>May be: {prediction.map(i => <li>{i.className}</li>)}</h2>;
+                parsed = <h3><span id="uncertain-indicator">May be:</span> {prediction.map((item, index) => 
+                        <li key={index} className="dish-li-item">
+                            <span className="dish" onClick={() => determineID(item.className)}>{item.className}</span>
+                        </li>)}
+                    </h3>;
             } else {          
-                parsed = [<h1>Likely: {prediction[0].className}</h1>];
+                parsed = [<div key={0}><h1>Likely: </h1><h2><span className="dish">{prediction[0].className}</span></h2></div>];
                 
                 if (prediction[1].probability > 0.05) {
                     // second prediction has reasonable probability
-                    parsed.push(<h2>May also be: {prediction[1].className}</h2>)
+                    parsed.push(<div className="divider" />)
+                    parsed.push(<h3 key={2}>May also be: <span className="dish">{prediction[1].className}</span></h3>)
                 }
             };
             setResults(parsed);
+            determineInfo(prediction[0].className);
         };
         parsePrediction();
     }, [prediction]);
@@ -39,7 +55,11 @@ function PredictionDisplay({prediction, selectedImage}) {
         <div id="prediction-container">
             {
             results
-                ? <>{results}</>
+                ? <>
+                    {results}
+                    <div className="divider thick" />
+                    <p>{dishInfo}</p>
+                </>
                 : <p>Upload an image and press predict to get a prediction</p>
             }
         </div>
