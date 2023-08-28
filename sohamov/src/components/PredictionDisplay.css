@@ -1,0 +1,7 @@
+#prediction-container {
+    width: 38%;
+    box-sizing: border-box;
+    border: 5px solid var(--site-accent-color);
+    border-radius: 1%;
+    background-color: var(--container-color);
+}

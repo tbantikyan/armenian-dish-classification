@@ -12,34 +12,34 @@ import PredictionDisplay from "./components/PredictionDisplay"; // prediction di
 
 import './App.css' // stylesheet
 
-// run model for uplaoded image and set predicition
-async function runModel(model, setPrediction) {
-  const imageElement = document.getElementById("selected-image");
-  let tensor = tf.browser.fromPixels(imageElement)
-    .resizeNearestNeighbor([224, 224])
-    .toFloat()
-    .div(tf.scalar(127.5))
-    .sub(tf.scalar(1))
-    .expandDims();
-  model.predict(tensor).data().then(predictions => {
-    let top3 = Array.from(predictions)
-      .map((p, i) => {
-        return {
-          probability: p,
-          className: DISH_CLASSSES[i]
-        }
-      }).sort((a, b) => {
-        return b.probability - a.probability;
-      }).slice(0, 3);
-    setPrediction(top3);
-  })
-};
 
 function App() {
   const [model, setModel] = useState();
   const [selectedImage, setSelectedImage] = useState(null);
   const [prediction, setPrediction] = useState(null);
 
+  // run model for uplaoded image and set predicition
+  async function runModel() {
+    const imageElement = document.getElementById("selected-image");
+    let tensor = tf.browser.fromPixels(imageElement)
+      .resizeNearestNeighbor([224, 224])
+      .toFloat()
+      .div(tf.scalar(127.5))
+      .sub(tf.scalar(1))
+      .expandDims();
+    model.predict(tensor).data().then(predictions => {
+      let top3 = Array.from(predictions)
+        .map((p, i) => {
+          return {
+            probability: p,
+            className: DISH_CLASSSES[i]
+          }
+        }).sort((a, b) => {
+          return b.probability - a.probability;
+        }).slice(0, 3);
+      setPrediction(top3);
+    })
+  };
 
   // load trained model
   useEffect(() => {
@@ -74,13 +74,17 @@ function App() {
         </header>
         <main>
           <div id="model-logic">
-            <ImageUploader selectedImage={selectedImage} setSelectedImage={setSelectedImage} setPrediction={setPrediction} />
-            {
-            selectedImage && !prediction
-              ? <button onClick={() => runModel(model, setPrediction)}>Predict</button>
-              : null
-            }
-            <PredictionDisplay prediction={prediction} selectedImage={selectedImage} />
+            <ImageUploader 
+              selectedImage={selectedImage} 
+              setSelectedImage={setSelectedImage} 
+              prediction={prediction} 
+              setPrediction={setPrediction} 
+              runModel={runModel} 
+            />
+            <PredictionDisplay 
+              prediction={prediction} 
+              selectedImage={selectedImage} 
+            />
           </div>
           <div id="How_it_works">
             <h3>How it works</h3>

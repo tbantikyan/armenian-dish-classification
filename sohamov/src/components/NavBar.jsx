@@ -14,6 +14,7 @@ function NavBar() {
         setShowMenu(!showMenu);
     };
 
+    console.log("hi")
     return (
         <div id="navbar">
             <div id="logo-container">

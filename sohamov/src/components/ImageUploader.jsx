@@ -1,21 +1,31 @@
 import "./ImageUploader.css" // style sheet
 
-function ImageUploader({ selectedImage, setSelectedImage, setPrediction }) {
+function ImageUploader({ selectedImage, setSelectedImage, prediction, setPrediction, runModel }) {
     return (
         // Image uploader
         <div id="uploader-container">
             <div id="image-container">
                 {
                 selectedImage == null
-                    ? <p>Upload an image of a dish</p>
+                    ? <label id="upload-button" htmlFor="image-upload">Click to upload an image</label>
                     : selectedImage && (
-                        <img
-                            id="selected-image"
-                            alt="user image"
-                            crossOrigin="anonymous"
-                            width="100%"
-                            src={URL.createObjectURL(selectedImage)}
-                        />
+                        <>
+                            <img
+                                id="selected-image-shown"
+                                alt="user image"
+                                crossOrigin="anonymous"
+                                src={selectedImage}
+                            />
+                            {/*  Uncropped image for model */}
+                            <img
+                                id="selected-image"
+                                className="hidden"
+                                alt="user image"
+                                crossOrigin="anonymous"
+                                src={selectedImage}
+                            />
+                        </>
+  
                     )
                 }
                 <br />
@@ -24,22 +34,17 @@ function ImageUploader({ selectedImage, setSelectedImage, setPrediction }) {
                     name="myImage"
                     id="image-upload"
                     onChange={(event) => {
-                        console.log(event.target.files[0]);
-                        setSelectedImage(event.target.files[0]);
+                        setSelectedImage(URL.createObjectURL(event.target.files[0]));
                         setPrediction(null);
                     }}
                 />
             </div>
             <div id="image-buttons">
-                <label className="buttons" htmlFor="image-upload">Upload</label>
-                {
-                selectedImage
-                    ? <button className="buttons" onClick={() => {
-                        setSelectedImage(null)
-                        document.getElementById("image-upload").value = "";
-                    }}>Remove</button>
-                    : null
-                }
+                <button className="buttons left" disabled={selectedImage ? false : true} onClick={() => {
+                    setSelectedImage(null)
+                    document.getElementById("image-upload").value = "";
+                }}>Remove</button>
+                <button className="buttons right" disabled={selectedImage && !prediction ? false : true} onClick={() => runModel()}>Predict</button>
             </div>
         </div>
     );

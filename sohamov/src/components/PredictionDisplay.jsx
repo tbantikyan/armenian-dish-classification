@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 
+import "./PredictionDisplay.css" // style sheet
+
+
 function PredictionDisplay({prediction, selectedImage}) {
     const [results, setResults] = useState();
 
@@ -33,7 +36,7 @@ function PredictionDisplay({prediction, selectedImage}) {
     }, [prediction]);
 
     return (
-        <div>
+        <div id="prediction-container">
             {
             results
                 ? <>{results}</>
