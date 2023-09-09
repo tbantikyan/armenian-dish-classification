@@ -71,3 +71,10 @@
 .buttons:focus {
     outline: none;
 }
+
+/* Mobile formatting */
+@media (max-width: 801px) {
+    #uploader-container {
+        width: 100%;
+    }
+}

@@ -55,7 +55,7 @@ li {
         height: max-content;
         flex-direction: column;
         justify-content: flex-start;
-        background-color: #dcdcdc;
+        background-color: var(--navigation-color);
         padding: 6px 0 8px 0;
     }
     .nav-link {

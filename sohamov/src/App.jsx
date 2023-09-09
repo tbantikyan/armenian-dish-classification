@@ -87,9 +87,64 @@ function App() {
             />
           </div>
           <div id="How_it_works">
-            <h3>How it works</h3>
+            <h3 id="section-header">How it works</h3>
+            <p className="info">
+              So Hamov (hamov or համով meaning delicious in Armenian) is an image classification app that uses a trained 
+              machine learning model to identify dishes popular in Armenian cuisine. Although many of these dishes are 
+              enjoyed in several cultures around the world, the model was trained to classify them because they are 
+              particularly staples of Armenian cuisine and culture.
+              <br /><br />
+              <span className="bold">Uploading an image</span><br/>
+              To provide the machine learning mdoel an image to classify, upload an image format file by clicking within 
+              the box on the left. You can ensure that the prediction is as accurate as possible by using a high quality 
+              image. Avoid low-resolution, blurry, and low-light photos. The dish you wish to identify should also be 
+              clearly in frame, with as few additional subjects as possible.
+              <br /><br />
+              <span className="bold">Understanding the prediction</span><br/>
+              Upon pressing predict, the model determines probabilities for each potential classification. If the model is
+              very confident, only one prediction will be shown. Otherwise, two or three prediction may be shown at once. 
+              The webapp will also display information about the model's most confident prediction. To view information about a different prediction, you can click on the
+              corresponding predicted dish name.
+              <br /><br />
+              <span className="lightBold">Note:</span> if none of the predictions are correct, then either:<br />
+              <span className="dashed-item">The image quality is not suitable for the model.</span><br/>
+              <span className="dashed-item">The dish in the image is not a dish that the model was trained on.</span><br/>
+              <br />
+              Dishes the model has been trained to classify:<br />
+              <div id="class-list">
+                <div>
+                  <span className="dashed-item">ghapama (ղափամա)</span><br/>
+                  <span className="dashed-item">gata (գաթա)</span><br/>
+                  <span className="dashed-item">basturma (բաստուրմա)</span><br/>
+                </div>
+                <div>
+                  <span className="dashed-item">manti (մանթի)</span><br/>
+                  <span className="dashed-item">kufta (քուֆթա)</span><br/>
+                  <span className="dashed-item">tolma (տոլմա)</span><br/>
+                </div>
+                <div>
+                  <span className="dashed-item">spas (սպաս)</span><br/>
+                  <span className="dashed-item">lahmajo (լահմաջո)</span><br/>
+                  <span className="dashed-item">harissa (հարիսա)</span><br/>
+                </div>
+              </div>
+            </p>
+            <h3 id="section-header">About the app</h3>
+            <p className="info">
+              I got the idea to make this app after a few instances of friends reaching out to me with hopes that I could 
+              identify an Armenian dish they had eaten at a gathering or restaurant. Intriguied by machine learning and 
+              image analysis, I thought it'd be a fun project to create a webapp that could classify staples of Armenian
+              cuisine.<br/>
+              <br/>
+              I gathered a dataset of nearly one thousand images of dishes and trained the model with a success rate of roughly
+              98% in testing. I developed a functional and visually appealing webapp with React to allow anyone to 
+              play around with the model. Overall, the project was enjoyable and a wonderful learning activity. 
+            </p>
           </div>
         </main>
+        <footer>
+          
+        </footer>
       </>
     );
   }

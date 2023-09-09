@@ -51,3 +51,10 @@ h3 {
     height: 3px;
     background-color: var(--site-accent-color-2);
 }
+
+/* Mobile formatting */
+@media (max-width: 801px) {
+    #prediction-container {
+        width: 100%;
+    }
+}

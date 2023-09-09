@@ -4,7 +4,7 @@ import "./PredictionDisplay.css" // style sheet
 
 // use dish name as an identifier to determine which description to show
 const DISH_DESCRIPTIONS = {
-    'Բաստուրմա (basturma)': "Basturma is ...."
+    'Բաստուրմա (basturma)': <p>Basturma is ... ...</p>
 }
 
 
@@ -58,7 +58,7 @@ function PredictionDisplay({prediction, selectedImage}) {
                 ? <>
                     {results}
                     <div className="divider thick" />
-                    <p>{dishInfo}</p>
+                    {dishInfo}
                 </>
                 : <p>Upload an image and press predict to get a prediction</p>
             }
