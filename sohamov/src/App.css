@@ -92,6 +92,10 @@ main {
   justify-content: space-between;
 }
 
+#How_it_works {
+  margin-bottom: 5vh;
+}
+
 #section-header:first-of-type::before {
   content: '';
   display: block;

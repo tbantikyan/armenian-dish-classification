@@ -138,12 +138,12 @@ function App() {
               <br/>
               I gathered a dataset of nearly one thousand images of dishes and trained the model with a success rate of roughly
               98% in testing. I developed a functional and visually appealing webapp with React to allow anyone to 
-              play around with the model. Overall, the project was enjoyable and a wonderful learning activity. 
+              play around with the model. Overall, the project was enjoyable and a wonderful learning experience. 
             </p>
           </div>
         </main>
         <footer>
-          
+
         </footer>
       </>
     );
