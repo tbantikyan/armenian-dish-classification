@@ -129,6 +129,9 @@ main {
 .lightBold {
   font-weight: 500;
 }
+.italic {
+  font-style: italic;
+}
 
 #class-list {
   display: flex;

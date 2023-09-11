@@ -2,7 +2,7 @@ import { ref, getDownloadURL } from "firebase/storage";
 import { useState, useEffect } from 'react'
 import * as tf from "@tensorflow/tfjs";
 
-import DISH_CLASSSES from "./assets/dishClasses"; // dictionary with model classes
+import DISH_CLASSSES from "./assets/dishClasses"; // dictionary with model's classes
 import firebaseStorage from "./api/firebaseconfig.js" // object for firebase storage reads
 import ImageUploader from "./components/ImageUploader"; // image uploading component
 import logo from "./assets/sohamov-logo.png" // site logo
@@ -103,31 +103,31 @@ function App() {
               <span className="bold">Understanding the prediction</span><br/>
               Upon pressing predict, the model determines probabilities for each potential classification. If the model is
               very confident, only one prediction will be shown. Otherwise, two or three prediction may be shown at once. 
-              The webapp will also display information about the model's most confident prediction. To view information about a different prediction, you can click on the
-              corresponding predicted dish name.
+              The webapp will also display information about the model's most confident prediction. To view information 
+              about a different prediction, you can click on the corresponding predicted dish name.
               <br /><br />
               <span className="lightBold">Note:</span> if none of the predictions are correct, then either:<br />
               <span className="dashed-item">The image quality is not suitable for the model.</span><br/>
               <span className="dashed-item">The dish in the image is not a dish that the model was trained on.</span><br/>
               <br />
               Dishes the model has been trained to classify:<br />
-              <div id="class-list">
-                <div>
+              <span id="class-list">
+                <span>
                   <span className="dashed-item">ghapama (ղափամա)</span><br/>
                   <span className="dashed-item">gata (գաթա)</span><br/>
                   <span className="dashed-item">basturma (բաստուրմա)</span><br/>
-                </div>
-                <div>
+                </span>
+                <span>
                   <span className="dashed-item">manti (մանթի)</span><br/>
                   <span className="dashed-item">kufta (քուֆթա)</span><br/>
                   <span className="dashed-item">tolma (տոլմա)</span><br/>
-                </div>
-                <div>
+                </span>
+                <span>
                   <span className="dashed-item">spas (սպաս)</span><br/>
                   <span className="dashed-item">lahmajo (լահմաջո)</span><br/>
                   <span className="dashed-item">harissa (հարիսա)</span><br/>
-                </div>
-              </div>
+                </span>
+              </span>
             </p>
             <h3 id="section-header">About the app</h3>
             <p className="info">

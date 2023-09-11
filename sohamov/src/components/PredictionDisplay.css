@@ -14,13 +14,15 @@ h1, h2, h3 {
 
 h1 {
     font-size: 1.8em;
+    margin-top: 0.1em;
 }
 h2 {
     font-size: 1.4em;
     margin-top: -0.3em;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.18em;
 }
 h3 {
+    margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
 #uncertain-indicator {
@@ -50,6 +52,9 @@ h3 {
 .thick {
     height: 3px;
     background-color: var(--site-accent-color-2);
+}
+.dish-info {
+    margin-top: 0.5em;
 }
 
 /* Mobile formatting */
