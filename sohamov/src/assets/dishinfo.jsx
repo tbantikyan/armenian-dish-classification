@@ -15,8 +15,77 @@ const DISH_INFO = {
         </p>,
     'Գաթա (gata)':
         <p className="dish-info">
-            <span className="bold light">Gata</span>
-        </p>
+            <span className="bold light">Gata</span> is a delicious sweet treat made from rich, flaky dough and a sweet
+            filling. The pastry can come in a variety of forms, though it is typically shaped like a round cake or 
+            smaller, individual loaves.<br/>
+            <br/>
+            Gata is prepared with a mixture of nuts, commonly walnuts or almonds, sugar, and butter. The mixture is rolled
+            into the dough such that it creates layers of filling within the pastry. The dough itself is kneaded so that 
+            is will be light and airy.<br/>
+            <br/>
+            The pastry holds significance in Armenian culture and can be found decorated with designs pertaining to 
+            celebrations, village names, regional landmarks, or other intricate patterns. It is often baked for
+            Easter, Christmas, and New Years.
+        </p>,
+    'Ղափամա (ghapama)':
+        <p className="dish-info">
+            <span className="bold light">Ghapama</span> is a traditional Armenian dish that consists of a pumpkin stuffed
+            with rich, filling, yet sweet mixture. The dish is most often seen as the centerpiece of the table at special 
+            occasions, particularly for New Year's and Christmas festivities.<br/>
+            <br/>
+            Conventially, ghapama is prepared with a sugar pumpkin, though some may substitue with other varities of 
+            squash. The filling is prepared with rice, fresh nuts like walnuts, cashews, and pignolias, dried fruits,
+            butter, honey, and various warm spices.<br/>
+            <br/>
+            The presentation of the ghapama is also given consideration, as many prefer to cut the lid of the pumpkin 
+            in a decorative pattern.
+        </p>,
+    'Հարիսա (harissa)':
+        <p className="dish-info">
+            <span className="bold light">Harissa</span> is a hearty porridge prepared from hulled wheat and chicken, 
+            and is popularly enjoyed during the winter months. The dish has deep significance in Armenian history 
+            and is consequently a national dish of country.<br/>
+            <br/>
+            While Harissa refers to a hot pepper paste in other parts of the world, Armenians use the name exclusively
+            for this dish. The main ingredients the grain and protein, which are simmered for hours alongside various
+            aromatic spices to create a thick porridge with tender meat.<br/>
+            <br/>
+            Harissa is celebrated in Armenia for sustaining the Armenians of Musa Ler who resisted the Turks and Kurds 
+            during the Armenian genocide. Every year, Armenians hold a Harissa day celebration. The dish is also 
+            popular during Easter.
+        </p>,
+    'Քուֆթա (kufta)':
+        <p className="dish-info">
+            <span className="bold light">Kufta</span> refers to a family of dishes, enjoyed in many cultures, that 
+            resemble oblong-shaped meatballs. As a results, the dish is prepared in many ways and is known by 
+            numerous names. Armenian steak tartare, for example, refers to kufta made from raw beef.<br/>
+            <br/>
+            A traditional and particularly Armenian variant of kufta is vospov kufta (Armenian:
+            <span className="italic"> ոսպով քուֆթա</span>), which is vegeterian kufta made from red lentils 
+            instead of meat. A defining feature of kufta is the use of bulgur or hulled wheat in the patties, 
+            which helps bind the meat and gives flavor.<br/>
+            <br/>
+            The meat is well seasoned and enjoyed with onions, herbs, lemons, and other garnishes. It is also common 
+            to prepare a sauce in which the kufta can be dipped.
+            <br/>
+            <br/>
+        </p>,
+    'Լահմաջո (lahmajo)':
+        <p className="dish-info">
+            <span className="bold light">Lahmajo</span>
+        </p>,
+    'Մանթի (manti)':
+        <p className="dish-info">
+            <span className="bold light">Manti</span>
+        </p>,
+    'Սպաս (spas)':
+        <p className="dish-info">
+            <span className="bold light">Spas</span>
+        </p>,
+    'Տոլմա (tolma)':
+        <p className="dish-info">
+            <span className="bold light">Tolma</span>
+        </p>,
 }
 
 export default DISH_INFO
