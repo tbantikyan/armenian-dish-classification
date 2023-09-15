@@ -147,8 +147,26 @@ main {
 }
 
 footer {
+  display: flex;
+  justify-content:  center;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  color: var(--navigation-color);
   height: 112px;
   border-top: 2px solid var(--navigation-color);
+  background-color: var(--site-accent-color-2);
+}
+
+#footer-logo {
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+  height: 20%;
+}
+
+.footer-text {
+  margin: 0;
+  height: fit-content;
 }
 
 /* Mobile formatting */
