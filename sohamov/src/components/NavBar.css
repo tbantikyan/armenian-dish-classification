@@ -45,6 +45,10 @@ li {
     }
 }
 @media (max-width: 801px) {
+    header, #navbar {
+        background-color: var(--site-bg-color);
+    }
+
     .hidden {
         display: none;
     }
