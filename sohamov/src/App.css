@@ -75,6 +75,7 @@ header {
   width: 100vw;
   padding: 0 12vw;
   border-bottom: 2px solid var(--navigation-color);
+  z-index: 1;
 }
 
 main {
