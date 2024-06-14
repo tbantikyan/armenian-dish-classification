@@ -144,7 +144,7 @@ function App() {
         </main>
         <footer>
           <img id="footer-logo" src={logo} />
-          <p className="footer-text">Copyright @ 2023 Tigran Bantikyan</p>
+          <p className="footer-text">Copyright @ 2024 Tigran Bantikyan</p>
         </footer>
       </>
     );
