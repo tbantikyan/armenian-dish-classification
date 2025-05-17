@@ -2,7 +2,7 @@ import { ref, getDownloadURL } from "firebase/storage";
 import { useState, useEffect } from 'react'
 import * as tf from "@tensorflow/tfjs";
 
-import DISH_CLASSSES from "./assets/dishClasses.js"; // dictionary with model's classes
+import DISH_CLASSSES from "./assets/dishclasses.js"; // dictionary with model's classes
 import firebaseStorage from "./api/firebaseconfig.js" // object for firebase storage reads
 import ImageUploader from "./components/ImageUploader"; // image uploading component
 import logo from "./assets/sohamov-logo.png" // site logo
