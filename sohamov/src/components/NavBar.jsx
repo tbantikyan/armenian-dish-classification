@@ -24,7 +24,7 @@ function NavBar() {
             </div>
             <ul onClick={() => setShowMenu(false)} className={showMenu ? "visible" : "hidden"}>
                 <li><a className="nav-link" href="#How_it_works">How It Works</a></li>          
-                <li><a className="nav-link" href="https://github.com/tigranb2/armenian-dish-classification" target="_blank">Source Code</a></li>
+                <li><a className="nav-link" href="https://github.com/tbantikyan/armenian-dish-classification" target="_blank">Source Code</a></li>
             </ul> 
    
         </div>
