@@ -5,6 +5,8 @@ I got the idea to make this app after the third or fourth time a friend reached 
 
 I gathered a dataset of nearly one thousand images of dishes and trained a model with a success rate of roughly **98%** in testing. I developed a functional and visually appealing web app with React to allow anyone to play around with the model. Overall, the project was enjoyable and a wonderful learning experience.
 
+The trained model is located in the `sohamov/public` directory.
+
 ## Dish classes
 - ghapama (ղափամա)
 - gata (գաթա)

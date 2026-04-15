@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import * as tf from "@tensorflow/tfjs";
 
 import DISH_CLASSSES from "./assets/dishclasses.js"; // dictionary with model's classes
-import firebaseStorage from "./api/firebaseconfig.js" // object for firebase storage reads
 import ImageUploader from "./components/ImageUploader"; // image uploading component
 import logo from "./assets/sohamov-logo.png" // site logo
 import NavBar from "./components/NavBar"; // navigation bar component
@@ -48,11 +47,9 @@ function App() {
         return;
       };
 
-      const modelRef = ref(firebaseStorage, 'model.json');
-      const modelUrl = await getDownloadURL(modelRef);
-      const loadedModel = await tf.loadLayersModel(modelUrl);
+      const loadedModel = await tf.loadLayersModel('/model.json');
       setModel(loadedModel);
-    };
+    }
     fetchModel();
   }, [model]);
 
